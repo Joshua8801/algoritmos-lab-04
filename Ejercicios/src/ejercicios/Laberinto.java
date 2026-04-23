@@ -9,7 +9,7 @@ public class Laberinto {
     static int[][] ruta;
 
     public static boolean buscarCamino(int x, int y) {
-        // Caso base: llegada al destino
+        
         if (x == N - 1 && y == N - 1 && matrizLaberinto[x][y] == 0) {
             ruta[x][y] = 1;
             return true;
@@ -23,7 +23,6 @@ public class Laberinto {
             if (buscarCamino(x - 1, y)) return true; // arriba
             if (buscarCamino(x, y - 1)) return true; // izquierda
 
-            // Backtracking
             ruta[x][y] = 0;
         }
 
